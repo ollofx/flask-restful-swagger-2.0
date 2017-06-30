@@ -100,7 +100,7 @@ class Api(restful_Api):
         definitions = {}
 
         for method in [m.lower() for m in resource.methods]:
-            f = resource.__dict__.get(method, None)
+            f = getattr(resource, method)
             if f:
                 operation = f.__dict__.get('__swagger_operation_object', None)
                 if operation:
