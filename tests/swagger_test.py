@@ -60,7 +60,7 @@ class SwaggerTestCase(unittest.TestCase):
 
         expected = ('name', {
             'dest': 'name',
-            'type': str,
+            'type': unicode,
             'location': 'args',
             'help': 'Name to filter by',
             'required': False,
@@ -88,7 +88,7 @@ class SwaggerTestCase(unittest.TestCase):
 
         expected = [('name', {
             'dest': 'name',
-            'type': str,
+            'type': unicode,
             'location': 'args',
             'help': 'Name to filter by',
             'required': False,
@@ -119,7 +119,7 @@ class SwaggerTestCase(unittest.TestCase):
 
         expected = [('name', {
             'dest': 'name',
-            'type': str,
+            'type': unicode,
             'location': 'args',
             'help': 'Name to filter by',
             'required': False,
