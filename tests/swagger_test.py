@@ -25,7 +25,7 @@ class SwaggerTestCase(unittest.TestCase):
         self.assertEqual(d, {'swagger': '2.0', 'info': {'title': 'API'}})
 
     def test_should_get_data_type_str(self):
-        self.assertEqual(swagger.get_data_type({'type': 'string'}), str)
+        self.assertEqual(swagger.get_data_type({'type': 'string'}), unicode)
 
     def test_should_get_data_type_str_date(self):
         self.assertEqual(swagger.get_data_type({'type': 'string', 'format': 'date'}),
