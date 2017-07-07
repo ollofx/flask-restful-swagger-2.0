@@ -128,7 +128,7 @@ def get_data_type(param):
             elif param_format == 'date-time':
                 return inputs.datetime_from_iso8601
 
-            return str
+            return unicode
 
         elif param_type == 'integer':
             return int
