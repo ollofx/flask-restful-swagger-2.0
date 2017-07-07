@@ -1,5 +1,6 @@
 import unittest
 
+from builtins import str
 from flask_restful import inputs
 
 import flask_restful_swagger_2.swagger as swagger
@@ -25,7 +26,7 @@ class SwaggerTestCase(unittest.TestCase):
         self.assertEqual(d, {'swagger': '2.0', 'info': {'title': 'API'}})
 
     def test_should_get_data_type_str(self):
-        self.assertEqual(swagger.get_data_type({'type': 'string'}), unicode)
+        self.assertEqual(swagger.get_data_type({'type': 'string'}), str)
 
     def test_should_get_data_type_str_date(self):
         self.assertEqual(swagger.get_data_type({'type': 'string', 'format': 'date'}),
@@ -60,7 +61,7 @@ class SwaggerTestCase(unittest.TestCase):
 
         expected = ('name', {
             'dest': 'name',
-            'type': unicode,
+            'type': str,
             'location': 'args',
             'help': 'Name to filter by',
             'required': False,
@@ -88,7 +89,7 @@ class SwaggerTestCase(unittest.TestCase):
 
         expected = [('name', {
             'dest': 'name',
-            'type': unicode,
+            'type': str,
             'location': 'args',
             'help': 'Name to filter by',
             'required': False,
@@ -119,7 +120,7 @@ class SwaggerTestCase(unittest.TestCase):
 
         expected = [('name', {
             'dest': 'name',
-            'type': unicode,
+            'type': str,
             'location': 'args',
             'help': 'Name to filter by',
             'required': False,

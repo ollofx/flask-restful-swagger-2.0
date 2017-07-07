@@ -2,6 +2,7 @@ import collections
 import re
 import inspect
 import copy
+from builtins import str
 from functools import wraps
 
 from flask import request
@@ -128,7 +129,7 @@ def get_data_type(param):
             elif param_format == 'date-time':
                 return inputs.datetime_from_iso8601
 
-            return unicode
+            return str
 
         elif param_type == 'integer':
             return int
